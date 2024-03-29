@@ -12,12 +12,10 @@ function App() {
   }
   return (
     <>
-    <div className={"modal"}>
 
     <h1>User Details Modal</h1>
     <button onClick={() => {setOpenModal((value) => !value)}}>Open Form</button>
     {openModal ? <Modal handleModal={handleModal}></Modal> : null}
-    </div>
     </>
   )
 }

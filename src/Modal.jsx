@@ -12,18 +12,24 @@ const Modal = (props) => {
 
   function handleSubmit(e) {
     e.preventDefault()
-   if(phoneNumber.length !== 10) {
-    return alert("Invalid phone number. Please enter a 10-digit phone number.")
-   }
-   if(new Date(new Date().toISOString().split("T")[0]) < new Date(DOB.split("T")[0])) {
-    return alert("Invalid date of birth. Date of birth cannot be in the future.")
-   }
+   
    setPhoneNumber("")
    setDOB("")
    setEmailAddress("")
    setUsername("")
   }
+
+  function handleButtonSubmit() {
+    if(phoneNumber.length !== 10) {
+        return alert("Invalid phone number. Please enter a 10-digit phone number.")
+       }
+       if(new Date(new Date().toISOString().split("T")[0]) < new Date(DOB.split("T")[0])) {
+        return alert("Invalid date of birth . Date of birth cannot be in the future.")
+       }
+  }
   return (
+    <div className="modal">
+
     <div className={"modal-content"} onClick={props.handleModal}>
         <form onSubmit={handleSubmit} onClick={handleModalForm} className={"modalFormContainer"}>
 
@@ -36,8 +42,9 @@ const Modal = (props) => {
         <input id="phone" type="number" required value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)}/>
         <p>Date of Birth:</p>
         <input id="dob" type="datetime-local" required value={DOB} onChange={(e) => setDOB(e.target.value)}/>
-        <button type="submit" className="submit-button">Submit</button>
+        <button type="submit" className="submit-button" onClick={handleButtonSubmit}>Submit</button>
         </form>
+    </div>
     </div>
   );
 };
