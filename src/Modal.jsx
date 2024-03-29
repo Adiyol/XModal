@@ -36,7 +36,7 @@ const Modal = (props) => {
         <input id="phone" type="number" required value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)}/>
         <p>Date of Birth:</p>
         <input id="dob" type="datetime-local" required value={DOB} onChange={(e) => setDOB(e.target.value)}/>
-        <button type="submit" id="submit-button">Submit</button>
+        <button type="submit" className="submit-button">Submit</button>
         </form>
     </div>
   );
