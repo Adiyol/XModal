@@ -19,7 +19,8 @@ const Modal = (props) => {
   }
 
   function handleButtonSubmit() {
-      if(!emailAddress.contains("@")) {
+    console.log("running")
+      if(!emailAddress.includes("@")) {
           return alert("Invalid email .")
       }
     if (phoneNumber.length !== 10) {
