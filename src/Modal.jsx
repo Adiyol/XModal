@@ -28,10 +28,9 @@ const Modal = (props) => {
        }
   }
   return (
-    <div className="modal">
 
-    <div className={"modal-content"} onClick={props.handleModal}>
-        <form onSubmit={handleSubmit} onClick={handleModalForm} className={"modalFormContainer"}>
+    <div className={"modal"} onClick={props.handleModal}>
+        <form onSubmit={handleSubmit} onClick={handleModalForm} className={"modal-content"}>
 
         <h2>Fill Details</h2>
         <p>Username:</p>
@@ -44,7 +43,6 @@ const Modal = (props) => {
         <input id="dob" type="datetime-local" required value={DOB} onChange={(e) => setDOB(e.target.value)}/>
         <button type="submit" className="submit-button" onClick={handleButtonSubmit}>Submit</button>
         </form>
-    </div>
     </div>
   );
 };
