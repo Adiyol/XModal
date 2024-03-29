@@ -19,13 +19,13 @@ const Modal = (props) => {
   }
 
   function handleButtonSubmit() {
+      if(!emailAddress.contains("@")) {
+          return alert("Invalid email .")
+      }
     if (phoneNumber.length !== 10) {
       return alert(
         "Invalid phone number. Please enter a 10-digit phone number."
       );
-    }
-    if(!emailAddress.contains("@")) {
-        return alert("Invalid email .")
     }
     if (
       new Date(new Date().toISOString().split("T")[0]) <
