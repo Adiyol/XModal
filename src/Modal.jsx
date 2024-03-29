@@ -28,6 +28,7 @@ const Modal = (props) => {
         "Invalid phone number. Please enter a 10-digit phone number."
       );
     }
+    console.log(DOB, "DOB")
     if (
       new Date(new Date().toISOString().split("T")[0]) <
       new Date(DOB.split("T")[0])
@@ -71,7 +72,7 @@ const Modal = (props) => {
         <p>Date of Birth:</p>
         <input
           id="dob"
-          type="datetime-local"
+          type="date"
           required
           value={DOB}
           onChange={(e) => setDOB(e.target.value)}
